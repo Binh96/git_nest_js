@@ -5,8 +5,8 @@
   "compilerOptions": {
     "webpack": false,
     "assets": [
-      "**/*.ejs",
-      "/src/public/*.*"
+      "/**/*.ejs",
+      "src/**/*.*"
     ],
     "watchAssets": true
   }
