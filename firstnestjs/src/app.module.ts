@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoginModule } from './login/login.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Login } from './login/model/login.entity';
 
 @Module({
   imports: [LoginModule,
@@ -13,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'postgres',
       password: 'password',
       database: 'postgres',
-      entities: [],
+      entities: [Login],
       synchronize: true
     }),
   ],
