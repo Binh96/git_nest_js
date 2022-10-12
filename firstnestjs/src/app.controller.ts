@@ -9,6 +9,7 @@ export class AppController {
   @Get()
   @Render('contents/login')
   getHello(@Res() res: Response){
-    return {message: 'success'};
+    let temp = this.appService.getHello();
+    res.render("contents/login", {temp});
   }
 }
