@@ -11,15 +11,15 @@
                 <div class="col-lg-5 col-sm-5 col-xs-12">
                     <div class="wrapper-login">
                         <div class="login-header">
-                            <h1 class="login-heading">Login</h3>
+                            <h1 class="login-heading">Sign up</h3>
                         </div>
                         <div class="login-body">
-                            <form action="" method="post">
+                            <form action="/sign-up" method="post">
                                 <div class="login-body-row">
                                     <label for="" class="login-lable">
                                         Account:
                                     </label>
-                                    <input type="text" class="login-input" name="accountName" placeholder="abcxyz@gmail.com" required>
+                                    <input type="text" class="login-input" name="username" placeholder="abcxyz@gmail.com" required>
                                 </div>
                                 <div class="login-body-row mt-4">
                                     <label for="" class="login-lable">
@@ -27,13 +27,19 @@
                                     </label>
                                     <input type="password" class="login-input" name="password" placeholder="password" required>
                                 </div>
+                                <!-- <div class="login-body-row mt-4">
+                                    <label for="" class="login-lable">
+                                        Repeat password:
+                                    </label>
+                                    <input type="password" class="login-input" name="password" placeholder="password" required>
+                                </div> -->
                                 <div class="login-body-row login-btn-container mt-4 text-center">
-                                    <button class="btn login-btn" type="submit">Log in</button>
+                                    <button class="btn login-btn" type="submit">Sign up</button>
                                 </div>
                             </form>
                             <div class="login-body-row login-btn-container mt-4 text-center">
-                                <button class="btn login-btn" type="submit" >
-                                    <a href="/sign-up" class="login-btn-link d-block">Sign up</a>
+                                <button class="btn login-btn" type="submit">
+                                    <a href="/login" class="d-block login-btn-link">Log in</a>
                                 </button>
                             </div>
                         </div>

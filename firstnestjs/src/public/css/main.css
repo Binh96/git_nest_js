@@ -65,3 +65,12 @@ html{
     opacity: 0.9;
     color: #ffffff;
 }
+
+.login-btn-link{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login-btn-link:hover{
+    color: #ffffff;
+}
