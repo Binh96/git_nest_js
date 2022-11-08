@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoginModule } from './login/login.module';
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
+import configuration from './config/configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './login/model/user.entity';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,9 +17,9 @@ import { AuthModule } from './auth/auth.module';
       port: 5432,
       username: 'postgres',
       password: 'password',
-      database: 'postgres',
+      database: 'login',
       entities: [User],
-      synchronize: true
+      synchronize: true,
     }),
     AuthModule
   ],

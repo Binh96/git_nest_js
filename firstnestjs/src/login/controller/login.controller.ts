@@ -1,8 +1,9 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { LoginService } from 'src/login/service/login/login.service';
+import { User } from '../model/user.entity';
 
-@Controller('login')
+@Controller()
 export class LoginController {
 
     constructor(private loginService: LoginService){
@@ -13,6 +14,17 @@ export class LoginController {
     @Render('contents/login')
     public homeLogin(res: Response, req: Request){
 
+    }
+
+    @Post()
+    public async login(@Body() user: User, @Res() res: Response){
+        const status = await this.loginService.checkAccount(user);
+        if(status){
+            res.render("contents/home");
+        }
+        else{
+            
+        }
     }
 
 }

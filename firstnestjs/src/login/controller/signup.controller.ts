@@ -15,8 +15,8 @@ export class SignupController {
     }
 
     @Post()
-    public signUp(@Body() user: User){
-        this.signupService.createAccount(user);
+    public async signUp(@Body() user: User){
+        await this.signupService.createAccount(user);
     }   
 
 }

@@ -10,9 +10,12 @@ export class SignupService {
     }
     /**
      *  This func used for create new account
-     * @param account 
+     *  @param account 
      */
-    public createAccount(account: User){
-        this.userRepository.save(account);
+    public async createAccount(account: User){
+        const user = new User();
+        user.username = account.username;
+        user.password = account.password;
+        await this.userRepository.save(user);
     }
 }
