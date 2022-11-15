@@ -5,6 +5,7 @@ import { SignupService } from '../service/signup/signup.service';
 
 @Controller("/sign-up")
 export class SignupController {
+
     constructor(private signupService: SignupService){
         
     }

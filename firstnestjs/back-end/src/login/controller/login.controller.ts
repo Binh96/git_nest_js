@@ -23,7 +23,7 @@ export class LoginController {
             res.render("contents/home");
         }
         else{
-            
+            res.status(401).send("Something goes wrong with you account, please check your account!");
         }
     }
 
