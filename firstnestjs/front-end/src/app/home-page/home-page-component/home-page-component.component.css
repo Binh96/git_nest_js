@@ -1,0 +1,27 @@
+.home-page__container{
+    position: relative;
+    height: 100vh;
+    background-image: url("../../../assets/img/marek-piwnicki-NevbsnKUX60-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.home-page__wrap-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 45px;
+    transform: translate(-50%, -50%);
+}
+
+.home-page__title{
+    margin-top: 20px;
+}
+
+.home-page__header{
+    color: #ffffff;
+}
