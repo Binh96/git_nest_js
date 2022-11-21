@@ -6,4 +6,6 @@ export interface User {
 export interface CreateUser {
     name?: string,
     password?: string,
+    dob?: string,
+    city?: string,
 }

@@ -1,0 +1,15 @@
+.room-chat{
+    margin-top: 84px;
+}
+
+.room-chat__container{
+    display: flex;
+}
+
+.room-chat__sub-container{
+    width: 100%;
+}
+
+.room-chat-main{
+    
+}

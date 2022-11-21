@@ -4,22 +4,24 @@ import { HeaderModule } from './header/header.module';
 import { HeaderComponent } from './header/header.component';
 import { HeadModule } from './head/head.module';
 import { HeadComponent } from './head/head.component';
-import { FooterComponent } from './footer/footer.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { SideNavModule } from './side-nav/side-nav.module';
 
 
 
 @NgModule({
   declarations: [
-    FooterComponent
   ],
   imports: [
     CommonModule,
     HeaderModule,
-    HeadModule
+    HeadModule,
+    SideNavModule
   ],
   exports: [
     HeaderComponent,
-    HeadComponent
+    HeadComponent,
+    SideNavComponent
   ]
 })
 export class MyCommonModule { }

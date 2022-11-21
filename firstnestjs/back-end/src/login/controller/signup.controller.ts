@@ -1,5 +1,7 @@
 import { Body, Controller, Get, Post, Render, Req } from '@nestjs/common';
 import { Request, Response } from 'express';
+import { UserDto } from '../dto/userDto';
+import { InforUser } from '../model/inforUser';
 import { User } from '../model/user.entity';
 import { SignupService } from '../service/signup/signup.service';
 
@@ -10,14 +12,13 @@ export class SignupController {
         
     }
 
-    @Get()
-    @Render('contents/signup')
-    public homeSignUp(res: Response){
-    }
-
     @Post()
-    public async signUp(@Body() user: User){
-        await this.signupService.createAccount(user);
+    public async signUp(@Body() userDto: UserDto){
+        const user = new User();
+        const inforUser = new InforUser(userDto.city, userDto.dob);
+        user.password = userDto.password;
+        user.username = userDto.username;
+        await this.signupService.createAccount(user, inforUser);
     }   
 
 }

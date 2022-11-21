@@ -14,8 +14,8 @@
 .wrapper-login{
     overflow: hidden;
     border-radius: 22px;
-    height: 70vh;
     background-color: #F5EFE6;
+    padding-bottom: 30px;
 }
 
 .login-header{
@@ -29,7 +29,6 @@
 
 .login-body{
     padding: 0 20px;
-    margin-top: 40px;
 }
 
 .login-lable{
@@ -45,7 +44,8 @@
     width: 100%;
     padding: 5px 10px;
     font-size: 18px;
-    color: #B4CDE6;
+    color: #75757e;
+    font-weight: 500;
 }
 
 .login-btn{

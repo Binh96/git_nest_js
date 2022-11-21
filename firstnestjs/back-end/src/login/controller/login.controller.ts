@@ -10,12 +10,6 @@ export class LoginController {
 
     }
 
-    @Get()
-    @Render('contents/login')
-    public homeLogin(res: Response, req: Request){
-
-    }
-
     @Post()
     public async login(@Body() user: User, @Res() res: Response){
         const status = await this.loginService.checkAccount(user);

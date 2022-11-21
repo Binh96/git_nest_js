@@ -5,6 +5,7 @@ import { LoginModule } from './login/login.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './login/model/user.entity';
 import { AuthController } from './auth/auth.controller';
+import { InforUser } from './login/model/inforUser';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { AuthController } from './auth/auth.controller';
       username: 'postgres',
       password: 'password',
       database: 'login',
-      entities: [User],
+      entities: [User, InforUser],
       synchronize: true,
     }),
   ],

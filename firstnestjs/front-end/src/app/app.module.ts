@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { MyCommonModule } from './my-common/my-common.module';
 import { HomePageModule } from './home-page/home-page.module';
+import { RoomChatModule } from './room-chat/room-chat.module';
+import { SignupModule } from './signup/signup.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HomePageModule } from './home-page/home-page.module';
     LoginModule,
     MyCommonModule,
     HttpClientModule,
-    HomePageModule
+    HomePageModule,
+    RoomChatModule,
+    SignupModule,
+    ShareModule
   ],
   providers: [],
   bootstrap: [AppComponent]

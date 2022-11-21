@@ -1,0 +1,55 @@
+<section class="login">
+    <div class="container login-container">
+        <div class="row justify-content-center align-items-center login-container-row">
+            <div class="col-lg-5 col-sm-5 col-xs-12">
+                <div class="wrapper-login">
+                    <div class="login-header">
+                        <h1 class="login-heading">Sign up</h1>
+                    </div>
+                    <div class="login-body">
+                        <form method="post" formGroup="signUpForm" (ngSubmit)="createUser()">
+                            <div class="login-body-row">
+                                <label for="" class="login-lable">
+                                    Account:
+                                </label>
+                                <input type="text" class="login-input" name="name" formControlName="name" placeholder="abcxyz@gmail.com" required>
+                            </div>
+                            <div class="login-body-row mt-4">
+                                <label for="" class="login-lable">
+                                    Date of birth:
+                                </label>
+                                <input type="date" class="login-input" name="dob" formControlName="dob" required>
+                            </div>
+                            <div class="login-body-row mt-4">
+                                <label for="" class="login-lable">
+                                    City:
+                                </label>
+                                <input type="text" class="login-input" name="city" formControlName="city" placeholder="City" required>
+                            </div>
+                            <div class="login-body-row mt-4">
+                                <label for="" class="login-lable">
+                                    Password:
+                                </label>
+                                <input type="password" class="login-input" name="password" formControlName="password" placeholder="password" required>
+                            </div>
+                            <div class="login-body-row mt-4">
+                                <label for="" class="login-lable">
+                                    Repeat password:
+                                </label>
+                                <input type="password" class="login-input" name="confirmPassword" placeholder="password" required>
+                            </div>
+                            <div class="login-body-row login-btn-container mt-4 text-center">
+                                <button class="btn login-btn">Sign up</button>
+                            </div>
+                        </form>
+                        <div class="login-body-row login-btn-container mt-4 text-center">
+                            <button class="btn login-btn" type="submit">
+                                <a href="/login" class="d-block login-btn-link">Log in</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
