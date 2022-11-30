@@ -6,11 +6,14 @@ import { HeadModule } from './head/head.module';
 import { HeadComponent } from './head/head.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SideNavModule } from './side-nav/side-nav.module';
+import { ErrorComponent } from './error/error.component';
 
 
 
 @NgModule({
   declarations: [
+  
+    ErrorComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import { SideNavModule } from './side-nav/side-nav.module';
   exports: [
     HeaderComponent,
     HeadComponent,
-    SideNavComponent
+    SideNavComponent,
+    ErrorComponent
   ]
 })
 export class MyCommonModule { }

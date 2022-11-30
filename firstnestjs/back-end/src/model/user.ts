@@ -1,5 +1,6 @@
 import { BeforeInsert, Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import * as bcrypt from 'bcrypt';
+import { InforUser } from "./inforUser";
 
 @Entity()
 export class User {
@@ -11,6 +12,9 @@ export class User {
 
     @Column({name: 'password'})
     password: string;
+
+    @OneToOne(() => InforUser, (inforUser) => inforUser.user, {cascade: true})
+    inforUser: InforUser;
 
     @BeforeInsert()
     async setPassword(password: string){

@@ -7,21 +7,21 @@
                         <h1 class="login-heading">Login</h1>
                     </div>
                     <div class="login-body">
-                        <form action="" method="post" formGroup="formLogin">
+                        <form method="post" [formGroup]="formLogin" (ngSubmit)="login()">
                             <div class="login-body-row">
                                 <label for="" class="login-lable">
                                     Account:
                                 </label>
-                                <input type="text" class="login-input" name="nameAccount" placeholder="abcxyz@gmail.com" required>
+                                <input type="text" class="login-input" name="username" formControlName="username" placeholder="abcxyz@gmail.com" required>
                             </div>
                             <div class="login-body-row mt-4">
                                 <label for="" class="login-lable">
                                     Password:
                                 </label>
-                                <input type="password" class="login-input" name="password" placeholder="password" required>
+                                <input type="password" class="login-input" name="password" placeholder="password" formControlName="password" required>
                             </div>
                             <div class="login-body-row login-btn-container mt-4 text-center">
-                                <button class="btn login-btn" type="submit">Log in</button>
+                                <button class="btn login-btn">Log in</button>
                             </div>
                         </form>
                         <div class="login-body-row login-btn-container mt-4 text-center">

@@ -1,15 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LoginModule } from './login/login.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './login/model/user.entity';
-import { AuthController } from './auth/auth.controller';
-import { InforUser } from './login/model/inforUser';
+import { User } from './model/user';
+import { InforUser } from './model/inforUser';
+import { LoginController } from './controller/login/login.controller';
+import { SignUpController } from './controller/sign-up/sign-up.controller';
+import { SignUpService } from './service/sign-up/sign-up.service';
+import { AuthService } from './service/auth/auth.service';
+import { EntityModule } from './model/entity.module';
+import { GroupChat } from './model/group';
+import { Friends } from './model/friends';
 
 @Module({
   imports: [
-    LoginModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -17,11 +21,12 @@ import { InforUser } from './login/model/inforUser';
       username: 'postgres',
       password: 'password',
       database: 'login',
-      entities: [User, InforUser],
+      entities: [User, InforUser, GroupChat, Friends],
       synchronize: true,
     }),
+    EntityModule
   ],
-  controllers: [AppController, AuthController],
-  providers: [AppService],
+  controllers: [AppController, LoginController, SignUpController],
+  providers: [AppService, SignUpService, AuthService],
 })
 export class AppModule {}

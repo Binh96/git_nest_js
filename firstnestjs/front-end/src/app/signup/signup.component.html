@@ -7,12 +7,12 @@
                         <h1 class="login-heading">Sign up</h1>
                     </div>
                     <div class="login-body">
-                        <form method="post" formGroup="signUpForm" (ngSubmit)="createUser()">
+                        <form method="post" [formGroup]="signUpForm" (ngSubmit)="createUser()">
                             <div class="login-body-row">
                                 <label for="" class="login-lable">
                                     Account:
                                 </label>
-                                <input type="text" class="login-input" name="name" formControlName="name" placeholder="abcxyz@gmail.com" required>
+                                <input type="text" class="login-input" name="name" formControlName="username" placeholder="abcxyz@gmail.com" required>
                             </div>
                             <div class="login-body-row mt-4">
                                 <label for="" class="login-lable">

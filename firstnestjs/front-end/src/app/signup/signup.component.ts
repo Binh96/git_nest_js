@@ -13,10 +13,10 @@ export class SignupComponent implements OnInit {
 
   constructor(private signupService: SignupService) {
     this.signUpForm = new FormGroup({
-      name: new FormControl("", [Validators.required]),
-      dob: new FormControl("", [Validators.required]),
-      password: new FormControl("", [Validators.required]),
-      city: new FormControl("", [Validators.required])
+      username: new FormControl(""),
+      dob: new FormControl(""),
+      password: new FormControl(""),
+      city: new FormControl("")
     }
     );
   }
@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
   }
 
   public createUser(){
-    console.log("why");
     const newUser = this.signUpForm.value;
     this.signupService.createUser(newUser).subscribe();
   }

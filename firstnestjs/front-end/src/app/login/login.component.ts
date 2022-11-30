@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { catchError, of } from 'rxjs';
 import { LoginService } from '../service/login.service';
+import { Location } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +13,12 @@ import { LoginService } from '../service/login.service';
 export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
+  statusLogin: boolean = false;
 
-  constructor(private loginService: LoginService) { 
+  constructor(private loginService: LoginService,
+              private router: Router) { 
     this.formLogin = new FormGroup({
-      nameAccount: new FormControl(''),
+      username: new FormControl(''),
       password: new FormControl('')
     });
   }
@@ -23,7 +28,14 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void{
-    this.loginService.login(this.formLogin.value).subscribe();
+    this.loginService.login(this.formLogin.value).subscribe({
+      next: (res) => {
+        this.router.navigateByUrl("");
+      },
+      error: (err) => {
+        this.router.navigateByUrl("/error");
+      }
+    });
   }
 
 }
