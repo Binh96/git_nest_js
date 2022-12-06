@@ -24,6 +24,7 @@ export class LoginController {
                 "message": "You can access this site!",
                 "status": status
             });
+            this.authService.getToken(user);
         }
         else{
             res.setHeader('Content-Type', 'Application/json');

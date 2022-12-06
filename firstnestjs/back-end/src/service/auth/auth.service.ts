@@ -3,11 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/model/user';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt'; 
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
 
-    constructor(@InjectRepository(User) private userRepository: Repository<User>){
+    constructor(@InjectRepository(User) private userRepository: Repository<User>,
+                private jwtService: JwtService
+                ){
 
     }
 
@@ -21,6 +24,12 @@ export class AuthService {
             const isMatch = await bcrypt.compare(user.password, userInDb.password);
             return isMatch;
         }
-        return false;
+    }
+
+    public getToken(user: User){
+        const payload = user;
+        return {
+            access_token: this.jwtService.sign(payload)
+        }
     }
 }

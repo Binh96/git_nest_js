@@ -11,6 +11,9 @@ import { AuthService } from './service/auth/auth.service';
 import { EntityModule } from './model/entity.module';
 import { GroupChat } from './model/group';
 import { Friends } from './model/friends';
+import { JwtModule } from '@nestjs/jwt';
+import { AuthModule } from './utils/auth-utils/auth.module';
+import { JwtConstant } from './utils/auth-utils/auth';
 
 @Module({
   imports: [
@@ -24,7 +27,14 @@ import { Friends } from './model/friends';
       entities: [User, InforUser, GroupChat, Friends],
       synchronize: true,
     }),
-    EntityModule
+    JwtModule.register({
+      secret: JwtConstant.secret,
+      signOptions: {
+        expiresIn: '120s'
+      }
+    }),
+    EntityModule,
+    AuthModule
   ],
   controllers: [AppController, LoginController, SignUpController],
   providers: [AppService, SignUpService, AuthService],
